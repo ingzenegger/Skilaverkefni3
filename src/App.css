@@ -1,0 +1,58 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.spurning-div {
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 2rem;
+}
+.question {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.option {
+  background-color: aquamarine;
+  color: black;
+  margin-bottom: 1rem;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+  justify-self: center;
+}
+
+.option:hover {
+  background-color: yellow;
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
