@@ -5,41 +5,41 @@ const questions = [
     id: 1,
     question: "Hvað heitir stelpan sem hefur ofurstyrk í myndinni Encanto?",
     options: ["Luisa", "Mirabel", "Isabella", "Dolores"],
-    correctIndex: 1,
+    correctIndex: 0,
   },
   {
     id: 2,
     question:
       "Í hvaða átt er flogið þegar farið er frá Íslandi til Bandaríkjanna?",
     options: ["Norður", "Suður", "Austur", "Vestur"],
-    correctIndex: 4,
+    correctIndex: 3,
   },
   {
     id: 3,
     question: "Hvaða litur er neðstur í regnboga?",
     options: ["Gulur", "Blár", "Rauður", "Fjólublár"],
-    correctIndex: 4,
+    correctIndex: 3,
   },
   {
     id: 4,
     question:
       "Hvaða vinsæla söngkona syngur lögin Bad Guy og Happier Than Ever?",
     options: ["Rosé", "Taylor Swift", "Billie Eilish", "Katy Perry"],
-    correctIndex: 3,
+    correctIndex: 2,
   },
   {
     id: 5,
     question:
       "Hvað heitir illmennið í litlu hafmeyjunni sem stelur rödd Aríel?",
     options: ["Cruella", "Úrsúla", "Umbridge", "Yzma"],
-    correctIndex: 2,
+    correctIndex: 1,
   },
   {
     id: 6,
     question:
       "Hvað heitir litla systir Blæju í áströlsku teiknimyndinni Bluey?",
     options: ["Bára", "Bylgja", "Birta", "Blíða"],
-    correctIndex: 1,
+    correctIndex: 0,
   },
   {
     id: 7,
@@ -50,7 +50,7 @@ const questions = [
       "Að leggja sig",
       "Að stunda leikfimi",
     ],
-    correctIndex: 3,
+    correctIndex: 2,
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const questions = [
       "Gulur, appelsínugulur grænn og fjólublár",
       "Svartur, hvítur, apaskítur",
     ],
-    correctIndex: 1,
+    correctIndex: 0,
   },
   {
     id: 9,
@@ -72,13 +72,13 @@ const questions = [
       "Hvolpasveit",
       "Bakkabræður",
     ],
-    correctIndex: 4,
+    correctIndex: 3,
   },
   {
     id: 10,
     question: "Botnið málsháttinn: Margur er knár þótt hann sé…?",
     options: ["...blár", "...smár", "...tapsár", "...forritari"],
-    correctIndex: 2,
+    correctIndex: 1,
   },
 ];
 export { questions };

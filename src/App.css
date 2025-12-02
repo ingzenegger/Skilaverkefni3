@@ -5,8 +5,20 @@
   text-align: center;
 }
 
+/* litir - stolið með color picker af krakka Kviss 3 - eins og spurningarnar (svarmöguleikar mostly by yours truly) */
+
+:root {
+  --primary-color: #fda90b; /*sinnepsgulur*/
+  --secondary-color: #01c2ab; /*grænn, til dæmis fyrir rétt svar*/
+  --highlight-color: #fddb00; /*æpandi gulur*/
+  --neutral-color: #02a2d4; /*blár fyrir svar valmöguleika*/
+  --wrong-answer-color: #c74c2b; /*enginn beinlínis rauður utan á kassanum, see if this works*/
+  --background-color: #e7e8e0; /*ljósgrár background en einnig letur ef dökkur bakgrunnur*/
+  --text-color: #034d7f; /*dökkblár, einnig border*/
+}
+
 .spurning-div {
-  border: 2px solid white;
+  border: 2px solid var(--neutral-color);
   border-radius: 25px;
   padding: 2rem;
 }
@@ -16,7 +28,7 @@
 }
 
 .option {
-  background-color: aquamarine;
+  background-color: var(--neutral-color);
   color: black;
   margin-bottom: 1rem;
 }
@@ -30,29 +42,6 @@
 .option:hover {
   background-color: yellow;
 }
-.logo.react:hover {
+/* .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+} */
