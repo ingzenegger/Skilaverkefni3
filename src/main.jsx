@@ -8,7 +8,7 @@ import { questions } from "./questions.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <h1>Krakkakviss</h1>
-    {/* <App /> */}
-    <QuestionViewer data={questions} />
+    <App />
+    {/* <QuestionViewer data={questions} /> */}
   </StrictMode>
 );
