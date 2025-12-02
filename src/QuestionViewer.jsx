@@ -6,7 +6,7 @@ function QuestionViewer({ data }) {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     setSelectedAnswer(null);
-  }; //Function for "next" button
+  }; //Function for next question
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
@@ -23,6 +23,12 @@ function QuestionViewer({ data }) {
 
   const handleAnswerClick = (answerIndex) => {
     setSelectedAnswer(answerIndex);
+
+    if (questionId < 10) {
+      setTimeout(() => {
+        handleNext();
+      }, 1000);
+    }
 
     // You can add logic here to check if the answer is correct
     // and provide feedback, move to the next question, etc.
@@ -69,9 +75,9 @@ function QuestionViewer({ data }) {
       {/* <button onClick={handlePrevious} disabled={data.length <= 1}>
           Previous
         </button> */}
-      <button onClick={handleNext} disabled={data.length <= 1}>
+      {/* <button onClick={handleNext} disabled={selectedAnswer === null}>
         Næsta spurning
-      </button>
+      </button> */}
       {questionId === 10 && currentIndex === 9 && selectedAnswer !== null ? (
         <button>Finish</button>
       ) : (
