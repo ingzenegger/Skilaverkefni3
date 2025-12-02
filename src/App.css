@@ -40,7 +40,7 @@
 }
 
 .option:hover {
-  background-color: yellow;
+  background-color: var(--primary-color);
 }
 /* .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);

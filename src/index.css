@@ -50,7 +50,7 @@ button {
 button:hover {
   border-color: #e7e8e0;
 }
-button:focus,
+/* button:focus  */
 /* button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
@@ -63,7 +63,7 @@ button:focus,
   a:hover {
     color: #747bff;
   }
-  button {
+  /* button {
     background-color: #e7e8e0;
-  }
+  } */
 }
