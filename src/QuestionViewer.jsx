@@ -95,7 +95,7 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
       </button> */}
       {questionId === 10 && currentIndex === 9 && selectedAnswer !== null ? (
         <button className="finish-button" onClick={finishQuiz}>
-          Finish
+          Ljúka <span className="kviss">kvizzi</span>
         </button>
       ) : (
         <p></p>

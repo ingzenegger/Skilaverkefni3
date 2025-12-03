@@ -16,7 +16,7 @@ function QuizComplete({
   return (
     <div>
       <p>Vel gert {user}!</p>
-      <p>Þú fékkst {score} stig!</p>
+      <p>Þú fékkst {score} stig af 10!</p>
       <button type="reset" onClick={resetOnClick}>
         Reyna aftur?
       </button>
