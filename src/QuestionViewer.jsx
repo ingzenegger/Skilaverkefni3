@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressBar from "./assets/ProgressBar";
 
 function QuestionViewer({ data }) {
   const [currentIndex, setCurrentIndex] = useState(0); // State to track the index of the current object
@@ -21,8 +22,11 @@ function QuestionViewer({ data }) {
 
   const [selectedAnswer, setSelectedAnswer] = useState(null); //state to track selected answer
 
+  const [quizProgress, setQuizProgress] = useState(0); //state for progress bar
+
   const handleAnswerClick = (answerIndex) => {
     setSelectedAnswer(answerIndex);
+    setQuizProgress(quizProgress + 10);
 
     if (questionId < 10) {
       setTimeout(() => {
@@ -52,11 +56,11 @@ function QuestionViewer({ data }) {
                     selectedAnswer !== null &&
                     selectedAnswer === index &&
                     selectedAnswer === currentAnswer
-                      ? "#01c2ab" //Rétt svar
+                      ? "var(--secondary-color)" //Rétt svar
                       : selectedAnswer !== null &&
                         selectedAnswer === index &&
                         selectedAnswer !== currentAnswer
-                      ? "#c74c2b" //Rangt svar
+                      ? "var(--wrong-answer-color)" //Rangt svar
                       : "",
                   cursor:
                     selectedAnswer !== null && selectedAnswer !== index
@@ -68,6 +72,7 @@ function QuestionViewer({ data }) {
               </button>
             ))}
           </p>
+          <ProgressBar progress={quizProgress} color="var(--primary-color)" />
         </div>
       ) : (
         <p>No object selected.</p>
@@ -79,7 +84,7 @@ function QuestionViewer({ data }) {
         Næsta spurning
       </button> */}
       {questionId === 10 && currentIndex === 9 && selectedAnswer !== null ? (
-        <button>Finish</button>
+        <button className="finish-button">Finish</button>
       ) : (
         <p></p>
       )}

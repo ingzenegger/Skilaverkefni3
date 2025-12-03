@@ -9,8 +9,8 @@
 
 :root {
   --primary-color: #fda90b; /*sinnepsgulur*/
-  --secondary-color: #01c2ab; /*grænn, til dæmis fyrir rétt svar*/
-  --highlight-color: #fddb00; /*æpandi gulur*/
+  --secondary-color: #0b7c6e; /*grænn, til dæmis fyrir rétt svar*/
+  --highlight-color: #f8cb4a; /*æpandi gulur*/
   --neutral-color: #02a2d4; /*blár fyrir svar valmöguleika*/
   --wrong-answer-color: #c74c2b; /*enginn beinlínis rauður utan á kassanum, see if this works*/
   --background-color: #e7e8e0; /*ljósgrár background en einnig letur ef dökkur bakgrunnur*/
@@ -41,6 +41,26 @@
 
 .option:hover {
   background-color: var(--primary-color);
+}
+
+.finish-button {
+  margin-top: 1rem;
+}
+
+.kviss {
+  font-family: "Fontdiner Swanky", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.krakka {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.user-name {
+  font-family: "Fontdiner Swanky", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 /* .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
