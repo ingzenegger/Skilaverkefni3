@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import ProgressBar from "./assets/ProgressBar";
+import ProgressBar from "./ProgressBar";
+// import { isFinished, setIsFinished, score, setScore } from "./App";
 
-function QuestionViewer({ data }) {
+function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
   const [currentIndex, setCurrentIndex] = useState(0); // State to track the index of the current object
 
   const handleNext = () => {
@@ -16,7 +17,7 @@ function QuestionViewer({ data }) {
 
   const currentQuestion = data[currentIndex]; // Get the object to display
 
-  const currentAnswer = currentQuestion.correctIndex;
+  const correctAnswer = currentQuestion.correctIndex;
 
   const questionId = currentQuestion.id;
 
@@ -28,6 +29,11 @@ function QuestionViewer({ data }) {
     setSelectedAnswer(answerIndex);
     setQuizProgress(quizProgress + 10);
 
+    if (answerIndex === correctAnswer) {
+      setScore(score + 1);
+      console.log(score);
+    }
+
     if (questionId < 10) {
       setTimeout(() => {
         handleNext();
@@ -36,6 +42,10 @@ function QuestionViewer({ data }) {
 
     // You can add logic here to check if the answer is correct
     // and provide feedback, move to the next question, etc.
+  };
+
+  const finishQuiz = () => {
+    setIsFinished(!isFinished);
   };
 
   return (
@@ -55,11 +65,11 @@ function QuestionViewer({ data }) {
                   backgroundColor:
                     selectedAnswer !== null &&
                     selectedAnswer === index &&
-                    selectedAnswer === currentAnswer
+                    selectedAnswer === correctAnswer
                       ? "var(--secondary-color)" //Rétt svar
                       : selectedAnswer !== null &&
                         selectedAnswer === index &&
-                        selectedAnswer !== currentAnswer
+                        selectedAnswer !== correctAnswer
                       ? "var(--wrong-answer-color)" //Rangt svar
                       : "",
                   cursor:
@@ -84,7 +94,9 @@ function QuestionViewer({ data }) {
         Næsta spurning
       </button> */}
       {questionId === 10 && currentIndex === 9 && selectedAnswer !== null ? (
-        <button className="finish-button">Finish</button>
+        <button className="finish-button" onClick={finishQuiz}>
+          Finish
+        </button>
       ) : (
         <p></p>
       )}

@@ -2,10 +2,13 @@ import { useState } from "react";
 import { questions } from "./questions";
 import "./App.css";
 import QuestionViewer from "./QuestionViewer.jsx";
+import QuizComplete from "./QuizComplete.jsx";
 
 function App() {
   const [user, setUser] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+  const [score, setScore] = useState(0);
 
   const startQuiz = () => {
     setIsPlaying(!isPlaying);
@@ -13,9 +16,7 @@ function App() {
 
   return (
     <>
-      {isPlaying ? (
-        <QuestionViewer data={questions} />
-      ) : (
+      {isPlaying === !true && isFinished === !true ? (
         <div>
           <input
             value={user}
@@ -35,6 +36,26 @@ function App() {
             BYRJA
           </button>
         </div>
+      ) : isPlaying && isFinished === !true ? (
+        <QuestionViewer
+          data={questions}
+          setScore={setScore}
+          score={score}
+          isFinished={isFinished}
+          setIsFinished={setIsFinished}
+        />
+      ) : isPlaying && isFinished ? (
+        <QuizComplete
+          user={user}
+          score={score}
+          setScore={setScore}
+          isFinished={isFinished}
+          setIsFinished={setIsFinished}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+        />
+      ) : (
+        <p>Hvar er appið mitt?</p>
       )}
     </>
   );
