@@ -8,9 +8,9 @@ import { questions } from "./questions.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <h1>
-      <span className="krakka">Krakka</span><span className="kviss">kvizzið</span>
+      <span className="krakka">Krakka</span>
+      <span className="kviss">kvizzið</span>
     </h1>
     <App />
-    {/* <QuestionViewer data={questions} /> */}
   </StrictMode>
 );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
-// import { isFinished, setIsFinished, score, setScore } from "./App";
+
 
 function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
   const [currentIndex, setCurrentIndex] = useState(0); // State to track the index of the current object
@@ -8,12 +8,12 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
     setSelectedAnswer(null);
-  }; //Function for next question
+  }; //Function for moving to next question
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   }; //Function for "previous" button
-  // Sleppa?
+  // ákvað að sleppa next og previous tökkum, notandi getur ekki breytt svari svo það virtist ekki þjóna tilgangi að bakka. Hægt að byrja aftur upp á nýtt og reyna að hækka score frekar. En function fær að hanga inni svo ég sjái hvernig þetta virkaði.
 
   const currentQuestion = data[currentIndex]; // Get the object to display
 
@@ -31,7 +31,7 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
 
     if (answerIndex === correctAnswer) {
       setScore(score + 1);
-      console.log(score);
+      
     }
 
     if (questionId < 10) {
@@ -39,9 +39,6 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
         handleNext();
       }, 1000);
     }
-
-    // You can add logic here to check if the answer is correct
-    // and provide feedback, move to the next question, etc.
   };
 
   const finishQuiz = () => {
@@ -66,11 +63,11 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
                     selectedAnswer !== null &&
                     selectedAnswer === index &&
                     selectedAnswer === correctAnswer
-                      ? "var(--secondary-color)" //Rétt svar
+                      ? "var(--secondary-color)" //Correct answer
                       : selectedAnswer !== null &&
                         selectedAnswer === index &&
                         selectedAnswer !== correctAnswer
-                      ? "var(--wrong-answer-color)" //Rangt svar
+                      ? "var(--wrong-answer-color)" //Wrong answer
                       : "",
                   cursor:
                     selectedAnswer !== null && selectedAnswer !== index
@@ -87,12 +84,7 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
       ) : (
         <p>No object selected.</p>
       )}
-      {/* <button onClick={handlePrevious} disabled={data.length <= 1}>
-          Previous
-        </button> */}
-      {/* <button onClick={handleNext} disabled={selectedAnswer === null}>
-        Næsta spurning
-      </button> */}
+      
       {questionId === 10 && currentIndex === 9 && selectedAnswer !== null ? (
         <button className="finish-button" onClick={finishQuiz}>
           Ljúka <span className="kviss">kvizzi</span>

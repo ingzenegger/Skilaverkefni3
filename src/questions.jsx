@@ -1,4 +1,5 @@
 //Her eru spurningar og svör með öllu tilheyrandi NO CHEATING!
+//Spurningarnar eru teknar úr Krakkakviss3 - en svarmöguleikar by yours truly (síðasti option í spurningu 10 var impossible to resist)
 
 const questions = [
   {

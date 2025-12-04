@@ -1,4 +1,4 @@
-//Courtesy of Google - thank you very nice - þarf að update-a liti til að passa inní mitt css
+//Courtesy of Google - thank you very nice - breytti litum til að stíla betur inní mitt css
 
 import React from "react";
 
@@ -32,7 +32,7 @@ const ProgressBar = ({ progress, color }) => {
             fontWeight: "bold",
           }}
         >
-          {`${Math.round(progress)}%`}
+          {/* {`${Math.round(progress)}%`} --- Tók þetta út, var ruglandi fyrir notanda að hafa prósentu tölu í progress bar, misskilst sem stig */}
         </span>
       </div>
     </div>

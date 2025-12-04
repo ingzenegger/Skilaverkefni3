@@ -8,7 +8,7 @@ function App() {
   const [user, setUser] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(0);  
 
   const startQuiz = () => {
     setIsPlaying(!isPlaying);

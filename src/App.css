@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-/* litir - stolið með color picker af krakka Kviss 3 - eins og spurningarnar (svarmöguleikar mostly by yours truly) */
+/* root litir - notaði https://imagecolorpicker.com/ til að velja svipaða liti og á krakka Kviss 3 - sama stað og ég fékk spurningarnar */
 
 :root {
   --primary-color: #fda90b; /*sinnepsgulur*/
@@ -62,6 +62,3 @@
   font-weight: 400;
   font-style: normal;
 }
-/* .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */

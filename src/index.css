@@ -1,3 +1,4 @@
+/*Kommentaði bara út hér það sem ég þurfti/vildi ekki og breytti litum eins og við á - allt sem ég vildi bæta við fór í App.css - ruglaði mig dálítið þessi 2 css skjöl, sérstaklega með :root í öðru og #root í hinu - ætla að skoða það betur fyrir næsta verkefni*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -60,9 +61,9 @@ button:hover {
     color: #034d7f;
     background-color: #e7e8e0;
   }
-  a:hover {
+  /* a:hover {
     color: #747bff;
-  }
+  } */
   /* button {
     background-color: #e7e8e0;
   } */
