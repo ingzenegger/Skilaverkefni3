@@ -9,7 +9,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   const [score, setScore] = useState(0);
-  const [answers, setAnswers] = useState(Array(10).fill(null)); //added later, doesn't really do anything but show that  I can use useState to store data into an array, and console log it on finish.
+  const [answers, setAnswers] = useState(Array(10).fill(null)); //added later, doesn't really do anything but show that  I can use useState to store data into an array, and console log it on finish. (ég líka að reyna venja mig á að nota ensku...)
 
   const startQuiz = () => {
     setIsPlaying(!isPlaying);
