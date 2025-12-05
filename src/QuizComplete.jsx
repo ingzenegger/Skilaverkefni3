@@ -6,11 +6,14 @@ function QuizComplete({
   setIsFinished,
   isPlaying,
   setIsPlaying,
+  answers,
+  setAnswers,
 }) {
   const resetOnClick = () => {
     setIsPlaying(!isPlaying);
     setIsFinished(!isFinished);
     setScore(0);
+    setAnswers(Array(10).fill(null));
   };
 
   return (

@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import ProgressBar from "./ProgressBar";
 
-
-function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
+function QuestionViewer({
+  data,
+  score,
+  setScore,
+  isFinished,
+  setIsFinished,
+  answers,
+  setAnswers,
+}) {
   const [currentIndex, setCurrentIndex] = useState(0); // State to track the index of the current object
 
   const handleNext = () => {
@@ -29,9 +36,14 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
     setSelectedAnswer(answerIndex);
     setQuizProgress(quizProgress + 10);
 
+    setAnswers((prev) => {
+      const updated = [...prev];
+      updated[currentIndex] = answerIndex;
+      return updated;
+    });
+
     if (answerIndex === correctAnswer) {
       setScore(score + 1);
-      
     }
 
     if (questionId < 10) {
@@ -43,6 +55,7 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
 
   const finishQuiz = () => {
     setIsFinished(!isFinished);
+    console.log(answers);
   };
 
   return (
@@ -57,7 +70,7 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
                 key={option}
                 className="option"
                 onClick={() => handleAnswerClick(index)}
-                disabled={selectedAnswer !== null && selectedAnswer !== index} //disable other buttons, user can't change their answer
+                disabled={selectedAnswer !== null && selectedAnswer !== index} //disable other buttons so user can't change their answer
                 style={{
                   backgroundColor:
                     selectedAnswer !== null &&
@@ -84,7 +97,7 @@ function QuestionViewer({ data, score, setScore, isFinished, setIsFinished }) {
       ) : (
         <p>No object selected.</p>
       )}
-      
+
       {questionId === 10 && currentIndex === 9 && selectedAnswer !== null ? (
         <button className="finish-button" onClick={finishQuiz}>
           Ljúka <span className="kviss">kvizzi</span>

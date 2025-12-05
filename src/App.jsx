@@ -8,7 +8,8 @@ function App() {
   const [user, setUser] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
-  const [score, setScore] = useState(0);  
+  const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState(Array(10).fill(null)); //added later, doesn't really do anything but show that  I can use useState to store data into an array, and console log it on finish.
 
   const startQuiz = () => {
     setIsPlaying(!isPlaying);
@@ -43,6 +44,8 @@ function App() {
           score={score}
           isFinished={isFinished}
           setIsFinished={setIsFinished}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       ) : isPlaying && isFinished ? (
         <QuizComplete
@@ -53,6 +56,8 @@ function App() {
           setIsFinished={setIsFinished}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
+          answers={answers}
+          setAnswers={setAnswers}
         />
       ) : (
         <p>Hvar er appið mitt?</p>
